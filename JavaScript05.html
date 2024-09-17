@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | ejemplo 05</title>
+</head>
+<script>
+    function calcular(){
+        let ximp = document.getElementById('txtimp').value; 
+        let xigv= 0.18* ximp;
+        document.getElementById('txtigv').value = xigv;
+        //mostrar el valor total
+        //parseInt convierte un texto a numero entero
+        //parseFloat convierte un texto a numero decimal 
+        let xtot= parseInt (ximp) + parseInt(xigv) ;
+        document.getElementById('txtTotal').value = xtot;
+
+    }
+    function limpiar(){
+        document.getElementById('txtimp').value="";
+        document.getElementById('txtigv').value = "";
+        document.getElementById('txtTotal').value = "";
+        //ubicar el cursos en txtimp
+        //focus es un metodo
+        document.getElementById('txtimp').focus();
+
+    }
+
+</script>
+<style>
+    .colorB{
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgb(114, 8, 78);
+        border-radius: 10px;
+        cursor: pointer; /*muestra una manit */
+        color: white;
+      
+    }
+
+</style>
+<body>
+    <h1>FACTURACION</h1>
+    <hr>
+    <form action="">
+        <h3>Importe de Factura</h3>
+        <input type="text" name="" id="txtimp" placeholder="Ingrese importe">
+        <h3>IGV</h3>
+        <input type="text" name="" id="txtigv" disabled>
+        <br>
+        <h3>total a pagar</h3>
+        <input type="text" name="" id="txtTotal" disabled>
+
+        <br>
+        <div>
+            <input class="colorB" onclick="calcular();" type="button" value="calcular" >
+            <input class="colorB" style="background-color:blue ;" onclick="limpiar();" type="button" value="limpiar" >    
+        </div>
+        
+    </form>
+</body>
+</html>

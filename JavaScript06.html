@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | ejercicio 06</title>
+    <script>
+    function calcular(){
+        let xp1 = document.getElementById('txtP01').value;
+        let xp2 = document.getElementById('txtP02').value;
+        let xp3 = document.getElementById('txtP03').value;
+        //PRomedio
+        let xprom = (parseInt(xp1) +parseInt(xp2)+ parseInt(xp3))/3;
+        document.getElementById('txtProm').value=xprom;
+        if (xprom >= 11){
+            document.getElementById('txtEstado').value="Aprobado";
+        }else{
+            document.getElementById('txtEstado').value="Desaprobado";
+        }
+ 
+ 
+    }
+    function limpiar(){
+        document.getElementById('txtP01').value="";
+        document.getElementById('txtP02').value = "";
+        document.getElementById('txtP03').value = "";
+        document.getElementById('txtProm').value = "";
+        document.getElementById('')
+        //ubicar el cursos en txtimp
+        //focus es un metodo
+        document.getElementById('txtP01').focus();
+
+    }
+    </script>
+    <style>
+        h1{
+            text-align: center;
+            color: goldenrod;
+        }
+        table{
+            margin: auto;
+            padding: 20px;
+            border: 3px black solid;
+            font-size: large;
+            width: 30%;
+
+         
+           
+        }
+        .boton{
+            margin: 10px;
+            padding: 8px;
+            background-color:rgb(5, 131, 79) ;
+            color: white;
+            font-size: large;
+
+        }
+        .inp{
+            font-size: large;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <table>
+            <h1>Promedio de notas</h1>
+            <tr>
+                <td>
+                    <h3>Curso :</h3>
+                </td>
+                <td>
+                    <select class="inp" name="" id="">
+                        <option value="1">python</option>
+                        <option value="2">java</option>
+                        <option value="3">javascript</option>
+                        <option value="4">c++</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td><h3>Practica 1</h3></td>
+                    
+                <td><input  class="inp" type="number" name="" id="txtP01" placeholder="Ingrese su nota"></td>
+            </tr>
+            <tr>
+                <td> <h3>Practica 2</h3></td>
+                <td><input  class="inp" type="number" name="" id="txtP02" placeholder="Ingrese su nota"></td>
+            </tr>
+            <tr>
+                <td><h3>Practica 3</h3></td>
+                <td><input  class="inp" type="number" name="" id="txtP03" placeholder="Ingrese su nota"></td>
+            </tr>
+            <tr>
+                <td><h3>Promedio</h3></td>
+                <td>
+                    <input class="inp" type="number" name="" id="txtProm" disabled>
+                </td>
+            </tr>
+           
+            <tr>
+                <td><h3>Estado</h3></td>
+                <td>
+                    <input class="inp" type="text" name="" id="txtEstado" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                 <input class="boton" onclick="calcular();" type="button" value="calcular" >
+                </td> 
+                <td>
+                 <input class="boton" onclick="limpiar();" type="button" value="limpiar" >
+                </td>
+                 
+             </tr>
+
+            
+        </table>
+    </form>
+    
+</body>
+</html>
